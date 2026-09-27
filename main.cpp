@@ -1,4 +1,5 @@
- /*
+
+/*
 Faculty of Computers and Artificial Intelligence, Cairo University (FCAI-CU)
 Course: CS213 - Object Oriented Programming
 Assignment 1 - Image Processing Application
@@ -128,11 +129,11 @@ int main() {
             string filename;
             cout << "ENTER THE IMAGE FILE NAME : ";
             cin >> filename;
-            while (!isvalidExtension(filename)) {
+            while (!isValidExtension(filename)) {
                 cout << "INVALID EXTENSION.  ENTER A VALID IMAGE NAME: ";
                 cin >> filename;
             }
-            img.loadRaw(filename);
+            img.loadNewImage(filename);
             cout << "IMAGE LOADED SUCCESSFULLY!" << endl;
         }
         else if (number == 2) {
@@ -184,7 +185,7 @@ int main() {
             cout << "-> APPLYING INFRARED PHOTOGRAPHY FILTER...\n";
         }
         else if (number == 17) {
-            AsktosaveImage(img);
+            askToSaveImage(img);
         }
         else if (number == 18) {
             cout << "THANK YOU FOR USING THE PROGRAM. GOODBYE!\n";
@@ -196,13 +197,3 @@ int main() {
     }
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
