@@ -97,6 +97,15 @@ void applyBlackAndWhite(Image &img){
         }
     }
 }
+void applyInvertImageColors(Image& img) {
+    for (int y = 0; y < img.height; y++) {
+        for (int x = 0; x < img.width; x++) {
+            img.pixels[y][x].r = 255 - img.pixels[y][x].r;
+            img.pixels[y][x].g = 255 - img.pixels[y][x].g;
+            img.pixels[y][x].b = 255 - img.pixels[y][x].b;
+        }
+    }
+}
 int main() {
     Image img;
     int number = 0; 
@@ -123,6 +132,7 @@ int main() {
         }
         else if (number == 4) {
             cout << "-> APPLYING INVERT COLORS FILTER...\n";
+         applyInvertImageColors(img)
         }
         else if (number == 5) {
             cout << "-> APPLYING MERGE IMAGES FILTER...\n";
