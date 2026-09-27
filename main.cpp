@@ -83,6 +83,18 @@ void showMenu() {
     cout << "18. Exit\n";
     cout << "Enter your choice (1-18): ";
 }
+
+void applyGrayscale(Image& img) {
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            int avg = (img(i, j, 0) + img(i, j, 1) + img(i, j, 2)) / 3;
+            
+            img(i, j, 0) = avg;
+            img(i, j, 1) = avg;
+            img(i, j, 2) = avg;
+        }
+    }
+}
 void applyBlackAndWhite(Image &img){
     for(int i=0;i<img.width;++i){
         for(int j=0;j<img.height;++j){
@@ -125,6 +137,7 @@ int main() {
         }
         else if (number == 2) {
             cout << "-> APPLYING GRAYSCALE FILTER...\n";
+         applyGrayscale(img);
         }
         else if (number == 3) {
             cout << "-> APPLYING BLACK AND WHITE FILTER...\n";
@@ -132,7 +145,7 @@ int main() {
         }
         else if (number == 4) {
             cout << "-> APPLYING INVERT COLORS FILTER...\n";
-         applyInvertImageColors(img)
+         applyInvertImageColors(img);
         }
         else if (number == 5) {
             cout << "-> APPLYING MERGE IMAGES FILTER...\n";
