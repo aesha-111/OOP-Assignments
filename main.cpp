@@ -83,6 +83,20 @@ void showMenu() {
     cout << "18. Exit\n";
     cout << "Enter your choice (1-18): ";
 }
+void applyBlackAndWhite(Image &img){
+    for(int i=0;i<img.width;++i){
+        for(int j=0;j<img.height;++j){
+            int r=img.getPixel(i,j,0);
+            int g=img.getPixel(i,j,1);
+            int b=img.getPixel(i,j,2);
+            int gray=(r+b+g)/3;
+            int newValue=(gray>127)?255:0;
+            img.setPixel(i,j,0,newValue);
+            img.setPixel(i,j,1,newValue);
+            img.setPixel(i,j,2,newValue);
+        }
+    }
+}
 int main() {
     Image img;
     int number = 0; 
@@ -105,6 +119,7 @@ int main() {
         }
         else if (number == 3) {
             cout << "-> APPLYING BLACK AND WHITE FILTER...\n";
+         applyBlackAndWhite(img);
         }
         else if (number == 4) {
             cout << "-> APPLYING INVERT COLORS FILTER...\n";
