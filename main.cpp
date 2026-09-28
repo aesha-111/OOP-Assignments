@@ -156,9 +156,11 @@ for(int t=0;t<times;t++){
  }
 int main() {
     Image img;
-    int number = 0; 
+    int number = 0;
+    cout <<"Step 1 :Enter 1 to load image or 19 to exit the program\n";
     while (number != 19) {
         showMenu();
+        cout << "Enter your choice:(1-19) ";
         cin >> number;
         if (number == 1) {
             string filename;
@@ -170,25 +172,32 @@ int main() {
             }
             img.loadNewImage(filename);
             cout << "IMAGE LOADED SUCCESSFULLY!" << endl;
+            cout<<"Step 2 : Enter a filter number (2-18) or 19 to exit: \n";
         }
         else if (number == 2) {
             cout << "-> APPLYING GRAYSCALE FILTER...\n";
          applyGrayscale(img);
+         cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 3) {
             cout << "-> APPLYING BLACK AND WHITE FILTER...\n";
          applyBlackAndWhite(img);
+         cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";  
         }
         else if (number == 4) {
             cout << "-> APPLYING INVERT COLORS FILTER...\n";
          applyInvertImageColors(img);
+         cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";  
         }
         else if (number == 5) {
             cout << "-> APPLYING fRAME IMAGES FILTER...\n";
+           
+          cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 6) {
             cout << "-> APPLYING FLIP IMAGE FILTER...\n";
             applyFlipBoth(img);
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 7) {
             cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
@@ -196,36 +205,57 @@ int main() {
             cout << "ENTER THE ANGLE TO ROTATE (IN DEGREES): ";
             cin >> angle;
             applyRotate90(img, angle);
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 8) {
             cout << "-> APPLYING DARKEN/LIGHTEN FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 9) {
             cout << "-> APPLYING RESIZE FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 10) {
             cout << "-> APPLYING MERGE FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 11) {
             cout << "-> APPLYING DETECT IMAGE EDGES FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 12) {
             cout << "-> APPLYING CROP IMAGE FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 13) {
             cout << "-> APPLYING BLUR FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 14) {
             cout << "-> APPLYING NATURAL SUNLIGHT FILTER...\n";
+           
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 15) {
             cout << "-> APPLYING TV EFFECT /NOISE FILTER...\n";
+
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 16) {
             cout << "-> APPLYING PURPLE TINT / WANO NIGHTFILTER...\n";
+
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 17) {
             cout << "-> APPLY INFRARED PHOTOGRAPHY FILTER...\n";
+
+           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }   
         else if (number == 18) {
             askToSaveImage(img);
