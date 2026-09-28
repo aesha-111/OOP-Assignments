@@ -75,7 +75,7 @@ void showMenu() {
     cout << "2. Grayscale Conversion\n";
     cout << "3. Black and White Filter\n";
     cout << "4. Invert Image Colors\n";
-    cout << "5. Frame Image\n";                // تم إضافة كلمة Image
+    cout << "5. Frame Image\n";                
     cout << "6. Flip Image\n";
     cout << "7. Rotate Image\n";
     cout << "8. Darken and Lighten Image\n";
