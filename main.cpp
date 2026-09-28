@@ -171,7 +171,6 @@ int main() {
         }
         else if (number == 7) {
             cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
-            cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
             int angle;
             cout << "ENTER THE ANGLE TO ROTATE (IN DEGREES): ";
             cin >> angle;
