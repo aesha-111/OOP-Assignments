@@ -118,12 +118,12 @@ void applyBlackAndWhite(Image &img){
         }
     }
 }
-void applyInvertImageColors(Image& img) {
-    for (int y = 0; y < img.height; y++) {
-        for (int x = 0; x < img.width; x++) {
-            img.pixels[y][x].r = 255 - img.pixels[y][x].r;
-            img.pixels[y][x].g = 255 - img.pixels[y][x].g;
-            img.pixels[y][x].b = 255 - img.pixels[y][x].b;
+void applyInvertColors(Image& img) {
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            for (int c = 0; c < 3; ++c) {
+                img(i, j, c) = 255 - img(i, j, c);
+            }
         }
     }
 }
