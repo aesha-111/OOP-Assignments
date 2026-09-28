@@ -119,6 +119,21 @@ void applyInvertImageColors(Image& img) {
         }
     }
 }
+void applyRotate90(Image&img,int angle){
+if(angle==360||angle==0)return;
+int times=(angle/90)%4;
+for(int t=0;t<times;t++){
+    Image rotated(img.height,img.width);
+    for(int i=0;i<img.width;++i){
+        for(int j=0;j<img.height;++j){
+            for(int k=0;k<img.channels;++k){
+                rotated(j,img.width-1-i,k)=img(i,j,k);
+            }
+        }
+    }
+    img=rotated;
+}    
+ }
 int main() {
     Image img;
     int number = 0; 
@@ -156,6 +171,11 @@ int main() {
         }
         else if (number == 7) {
             cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
+            cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
+            int angle;
+            cout << "ENTER THE ANGLE TO ROTATE (IN DEGREES): ";
+            cin >> angle;
+            applyRotate90(img, angle);
         }
         else if (number == 8) {
             cout << "-> APPLYING DARKEN/LIGHTEN FILTER...\n";
