@@ -61,28 +61,28 @@ void askToSaveImage(Image& img) {
         cout << "IMAGE NOT SAVED.\n";
     }
 }
-
 void showMenu() {
     cout << "\n--- Image Processing Menu ---\n";
-    cout << "1.  Load New Image\n";
-    cout << "2.  Grayscale Conversion\n";
-    cout << "3.  Black and White Filter\n";
-    cout << "4.  Invert Image Colors\n";
-    cout << "5.  Merge Images\n";
-    cout << "6.  Flip Image\n";
-    cout << "7.  Rotate Image\n";
-    cout << "8.  Darken and Lighten Image\n";
-    cout << "9.  Resize Image\n";
-    cout << "10. Detect Image Edges\n";
-    cout << "11. Crop Image\n";
-    cout << "12. Blur Image\n";
-    cout << "13. Natural Sunlight Filter\n";
-    cout << "14. TV Effect / Noise Filter\n";
-    cout << "15. Purple Tint / Wano Night Filter\n";
-    cout << "16. Infrared Photography Filter\n";
-    cout << "17. Save Current Image\n";
-    cout << "18. Exit\n";
-    cout << "Enter your choice (1-18): ";
+    cout << "1. Load New Image\n";
+    cout << "2. Grayscale Conversion\n";
+    cout << "3. Black and White Filter\n";
+    cout << "4. Invert Image Colors\n";
+    cout << "5. Frame Image\n";                // تم إضافة كلمة Image
+    cout << "6. Flip Image\n";
+    cout << "7. Rotate Image\n";
+    cout << "8. Darken and Lighten Image\n";
+    cout << "9. Resize Image\n";
+    cout << "10. Merge Images\n";
+    cout << "11. Detect Image Edges\n";
+    cout << "12. Crop Image\n";
+    cout << "13. Blur Image\n";
+    cout << "14. Natural Sunlight Filter\n";
+    cout << "15. TV Effect / Noise Filter\n";
+    cout << "16. Purple Tint / Wano Night Filter\n";
+    cout << "17. Infrared Photography Filter\n";
+    cout << "18. Save Current Image\n";
+    cout << "19. Exit\n";
+    cout << "Enter your choice (1-19): ";
 }
 
 void applyGrayscale(Image& img) {
