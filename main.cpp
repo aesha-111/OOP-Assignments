@@ -157,7 +157,7 @@ for(int t=0;t<times;t++){
 int main() {
     Image img;
     int number = 0; 
-    while (number != 18) {
+    while (number != 19) {
         showMenu();
         cin >> number;
         if (number == 1) {
@@ -204,35 +204,38 @@ int main() {
             cout << "-> APPLYING RESIZE FILTER...\n";
         }
         else if (number == 10) {
-            cout << "-> APPLYING DETECT EDGES FILTER...\n";
+            cout << "-> APPLYING MERGE FILTER...\n";
         }
         else if (number == 11) {
-            cout << "-> APPLYING CROP IMAGE FILTER...\n";
+            cout << "-> APPLYING DETECT IMAGE EDGES FILTER...\n";
         }
         else if (number == 12) {
-            cout << "-> APPLYING BLUR IMAGE FILTER...\n";
+            cout << "-> APPLYING CROP IMAGE FILTER...\n";
         }
         else if (number == 13) {
-            cout << "-> APPLYING NATURAL SUNLIGHT FILTER...\n";
+            cout << "-> APPLYING BLUR FILTER...\n";
         }
         else if (number == 14) {
-            cout << "-> APPLYING TV EFFECT / NOISE FILTER...\n";
+            cout << "-> APPLYING NATURAL SUNLIGHT FILTER...\n";
         }
         else if (number == 15) {
-            cout << "-> APPLYING PURPLE TINT / WANO NIGHT FILTER...\n";
+            cout << "-> APPLYING TV EFFECT /NOISE FILTER...\n";
         }
         else if (number == 16) {
-            cout << "-> APPLYING INFRARED PHOTOGRAPHY FILTER...\n";
+            cout << "-> APPLYING PURPLE TINT / WANO NIGHTFILTER...\n";
         }
         else if (number == 17) {
+            cout << "-> APPLY INFRARED PHOTOGRAPHY FILTER...\n";
+        }   
+        else if (number == 18) {
             askToSaveImage(img);
         }
-        else if (number == 18) {
+        else if (number == 19) {
             cout << "THANK YOU FOR USING THE PROGRAM. GOODBYE!\n";
             break;
         }
         else {
-            cout << "INVALID CHOICE. PLEASE ENTER A NUMBER BETWEEN 1 AND 18.\n";
+            cout << "INVALID CHOICE. PLEASE ENTER A NUMBER BETWEEN 1 AND 19.\n";
         }
     }
     return 0;
