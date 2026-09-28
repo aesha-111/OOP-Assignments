@@ -154,6 +154,19 @@ for(int t=0;t<times;t++){
     img=rotated;
 }    
  }
+void applyDarkenandLighten(Image& img, float factor) {
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            for (int c = 0; c < 3; ++c) {
+                int newValue =img(i, j, c) * factor;
+                if (newValue > 255) newValue = 255;
+                if (newValue < 0) newValue = 0;
+                img(i, j, c) = newValue;
+            }
+        }
+    }
+}
+
 int main() {
     Image img;
     int number = 0;
@@ -209,8 +222,11 @@ int main() {
         }
         else if (number == 8) {
             cout << "-> APPLYING DARKEN/LIGHTEN FILTER...\n";
-           
-           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
+            float factor;
+            cout << "ENTER THE FACTOR TO DARKEN/LIGHTEN (0 to 2): ";
+            cin >> factor;
+            applyDarkenandLighten(img, factor);
+            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 9) {
             cout << "-> APPLYING RESIZE FILTER...\n";
