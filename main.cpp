@@ -1,15 +1,23 @@
-
 /*
 Faculty of Computers and Artificial Intelligence, Cairo University (FCAI-CU)
 Course: CS213 - Object Oriented Programming
 Assignment 1 - Image Processing Application
 
-Team Members:
+Team Members & Contributions:
+
 1. Rania Adel Kamal Ahmed - ID: 20250222 (Team Leader)
+   - Tasks: Program Main Menu, Main Logic Structure, Filter 1 (Grayscale Conversion), Filter 5 (Flip Image)
+
 2. Aesha Osama Abd-elHafeez Abd-elkareem - ID: 20251219
+   - Tasks: Filter 4 (Frame Image), Filter 8 (Resize Image)
+
 3. Marwa Sabry Makram Fahmy - ID: 20250808
+   - Tasks: Program Main Menu, Main Logic Structure, Filter 3 (Invert Image Colors), Filter 7 (Darken and Lighten Image)
+
 4. Habiba Ibrahim Metwaly Ibrahim - ID: 20250801
+   - Tasks: Filter 2 (Black and White Filter), Filter 6 (Rotate Image)
 */
+
 #include <iostream>
 #include <string>
 #include "Image_Class.h"
@@ -119,6 +127,18 @@ void applyInvertImageColors(Image& img) {
         }
     }
 }
+void applyFlipBoth(Image& img) {
+    Image flippedImg(img.width, img.height);
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            for (int c = 0; c < 3; ++c) {
+                flippedImg(i, j, c) = img(img.width - 1 - i, img.height - 1 - j, c);
+            }
+        }
+    }
+
+    img = flippedImg;
+}
 void applyRotate90(Image&img,int angle){
 if(angle==360||angle==0)return;
 int times=(angle/90)%4;
@@ -164,10 +184,11 @@ int main() {
          applyInvertImageColors(img);
         }
         else if (number == 5) {
-            cout << "-> APPLYING MERGE IMAGES FILTER...\n";
+            cout << "-> APPLYING fRAME IMAGES FILTER...\n";
         }
         else if (number == 6) {
             cout << "-> APPLYING FLIP IMAGE FILTER...\n";
+            applyFlipBoth(img);
         }
         else if (number == 7) {
             cout << "-> APPLYING ROTATE IMAGE FILTER...\n";
