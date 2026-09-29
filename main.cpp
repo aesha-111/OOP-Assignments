@@ -127,6 +127,19 @@ void applyInvertColors(Image& img) {
         }
     }
 }
+void applyBorderFilter(Image &img) {
+ int borderSize=20;
+ for (int y =0 ;y < img.height ; ++y){
+    for (int x =0 ; x<img.width; ++x){
+        if(x<borderSize || x>=img.width-borderSize||
+            y<borderSize || y>=img.height-borderSize){
+                img.setPixel(x,y,0,255);
+                img.setPixel(x,y,1,255);
+                img.setPixel(x,y,2,255);
+       }
+    }
+  }
+}
 void applyFlipBoth(Image& img) {
     Image flippedImg(img.width, img.height);
     for (int i = 0; i < img.width; ++i) {
@@ -167,6 +180,30 @@ void applyDarkenandLighten(Image& img, float factor) {
     }
 }
 
+void resizeImage(Image& img) {
+    int newWidth, newHeight;
+    cout << "Enter new width and new height: ";
+    cin >> newWidth >> newHeight;
+
+    Image resizedImage(newWidth, newHeight);
+
+    float scalex = (float)img.width / newWidth;
+    float scaley = (float)img.height / newHeight;
+
+    for (int y2 = 0; y2 < newHeight; y2++) {
+        for (int x2 = 0; x2 < newWidth; x2++) {
+            
+            int x1 = (int)(x2 * scalex);
+            int y1 = (int)(y2 * scaley);
+
+            for (int c = 0; c < 3; c++) {
+                resizedImage.setPixel(x2, y2, c, img.getPixel(x1, y1, c));
+            }
+        }
+    }
+
+    img = resizedImage;
+}
 int main() {
     Image img;
     int number = 0;
@@ -204,7 +241,7 @@ int main() {
         }
         else if (number == 5) {
             cout << "-> APPLYING fRAME IMAGES FILTER...\n";
-           
+           applyBorderFilter(img);
           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 6) {
@@ -230,7 +267,7 @@ int main() {
         }
         else if (number == 9) {
             cout << "-> APPLYING RESIZE FILTER...\n";
-           
+            resizeImage(img); 
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 10) {
