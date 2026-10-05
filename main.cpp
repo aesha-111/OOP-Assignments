@@ -204,6 +204,18 @@ void resizeImage(Image& img) {
 
     img = resizedImage;
 }
+void applyCrop(Image& img, int x, int y, int width, int height) {
+    Image cropped(width, height);
+    for (int i = 0; i < width; ++i) {
+        for (int j = 0; j < height; ++j) {
+            for (int c = 0; c < 3; ++c) {
+                cropped(i, j, c) = img(x + i, y + j, c);
+            }
+        }
+    }
+    img = cropped;
+}
+
 int main() {
     Image img;
     int number = 0;
@@ -282,6 +294,16 @@ int main() {
         }
         else if (number == 12) {
             cout << "-> APPLYING CROP IMAGE FILTER...\n";
+           else if (number == 12) {
+            cout << "-> APPLYING CROP IMAGE FILTER...\n";
+            int x, y, width, height;
+            cout<<"enter starting x and Y coordinates";
+            cin>> x >> y ;
+            cout<<"enter width and height of the crop area";
+            cin>> width >> height ;
+            applyCrop(img, x, y, width, height);      
+            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
+        }
            
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
