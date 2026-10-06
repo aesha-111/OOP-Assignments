@@ -215,7 +215,17 @@ void applyCrop(Image& img, int x, int y, int width, int height) {
     }
     img = cropped;
 }
-
+void applyTVFX(Image&img){
+    for(int i=0;i<img.width;++i){
+        if(i%2==0){
+            for(int j=0;j<img.height;j++){
+                for(int k=0;k<3;k++){
+                    img.setPixel(j,i,k,img.getPixel(j,i,k)*0.5);
+                }
+            }
+        }
+    }
+ }
 int main() {
     Image img;
     int number = 0;
@@ -319,7 +329,7 @@ int main() {
         }
         else if (number == 15) {
             cout << "-> APPLYING TV EFFECT /NOISE FILTER...\n";
-
+           applyTVFX(img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 16) {
