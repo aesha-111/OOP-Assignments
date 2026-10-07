@@ -215,6 +215,21 @@ void applyCrop(Image& img, int x, int y, int width, int height) {
     }
     img = cropped;
 }
+void filter13_sunlight(Image img, Image& result) {
+    result = Image(img.width, img.height);
+
+    for (int x = 0; x < img.width; ++x) {
+        for (int y = 0; y < img.height; ++y) {
+            int r = img(x, y, 0) + 40;
+            int g = img(x, y, 1) + 30;
+            int b = img(x, y, 2) + 10;
+
+            result(x, y, 0) = min(255, r);
+            result(x, y, 1) = min(255, g);
+            result(x, y, 2) = min(255, b);
+        }
+    }
+}
 void applyTVFX(Image&img){
     for(int i=0;i<img.width;++i){
         if(i%2==0){
