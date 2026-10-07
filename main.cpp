@@ -342,9 +342,6 @@ int main() {
             applyCrop(img, x, y, width, height);      
             cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
-           
-           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
-        }
         else if (number == 13) {
             cout << "-> APPLYING BLUR FILTER...\n";
            
@@ -352,9 +349,9 @@ int main() {
         }
         else if (number == 14) {
             cout << "-> APPLYING NATURAL SUNLIGHT FILTER...\n";
-           
-           cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
-        }
+           filter13_sunlight(img, img);
+    cout << "Next step : enter 18 to save the image or 19 to exit the program\n";
+}
         else if (number == 15) {
             cout << "-> APPLYING TV EFFECT /NOISE FILTER...\n";
            applyTVFX(img);
