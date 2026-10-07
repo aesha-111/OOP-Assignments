@@ -204,6 +204,34 @@ void resizeImage(Image& img) {
 
     img = resizedImage;
 }
+void mergeImages(Image img1, Image img2, Image& result) {
+    int w, h, choice = 1;
+    
+    if (img1.width != img2.width || img1.height != img2.height) {
+        cout << "1. Max Size (Resize)\n2. Min Size (Crop)\nChoice: ";
+        cin >> choice;
+    }
+
+    if (choice == 1) {
+        w = max(img1.width, img2.width);
+        h = max(img1.height, img2.height);
+    } else {
+        w = min(img1.width, img2.width);
+        h = min(img1.height, img2.height);
+    }
+
+    result = Image(w, h);
+
+    for (int x = 0; x < w; ++x) {
+        for (int y = 0; y < h; ++y) {
+            for (int c = 0; c < 3; ++c) {
+                int p1 = img1(x * img1.width / w, y * img1.height / h, c);
+                int p2 = img2(x * img2.width / w, y * img2.height / h, c);
+                result(x, y, c) = (p1 + p2) / 2;
+            }
+        }
+    }
+}
 void applyCrop(Image& img, int x, int y, int width, int height) {
     Image cropped(width, height);
     for (int i = 0; i < width; ++i) {
@@ -324,7 +352,11 @@ int main() {
         }
         else if (number == 10) {
             cout << "-> APPLYING MERGE FILTER...\n";
-           
+           string filename2;
+    cout << "Enter the second image filename: ";
+    cin >> filename2;
+    Image img2(filename2);
+    mergeImages(img, img2, img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 11) {
