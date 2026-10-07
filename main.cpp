@@ -226,6 +226,21 @@ void applyTVFX(Image&img){
         }
     }
  }
+void applyPurpleTint(Image& img) {
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            int r = img(i, j, 0);
+            int g = img(i, j, 1);
+            int b = img(i, j, 2);
+            r = std::min(255, r + 40); 
+            b = std::min(255, b + 60); 
+            g= std::max(0, g - 20);
+            img(i, j, 0) = r;
+            img(i, j, 1) = g;
+            img(i, j, 2) = b;
+        }
+    }
+}
 int main() {
     Image img;
     int number = 0;
@@ -334,7 +349,7 @@ int main() {
         }
         else if (number == 16) {
             cout << "-> APPLYING PURPLE TINT / WANO NIGHTFILTER...\n";
-
+            applyPurpleTint(img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 17) {
