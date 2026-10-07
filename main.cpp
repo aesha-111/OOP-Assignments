@@ -15,7 +15,7 @@ Team Members & Contributions:
    - Tasks: Program Main Menu, Main Logic Structure, Filter 3 (Invert Image Colors), Filter 7 (Darken and Lighten Image)
 
 4. Habiba Ibrahim Metwaly Ibrahim - ID: 20250801
-   - Tasks: Filter 2 (Black and White Filter), Filter 6 (Rotate Image)
+   - Tasks: Filter 2 (Black and White Filter), Filter 6 (Rotate Image), Filter 10 (Detect Image Edges), Filter 14 (TV Effect)
 */
 
 #include <iostream>
