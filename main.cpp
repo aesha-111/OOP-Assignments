@@ -332,8 +332,6 @@ int main() {
            
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
-        else if (number == 12) {
-            cout << "-> APPLYING CROP IMAGE FILTER...\n";
            else if (number == 12) {
             cout << "-> APPLYING CROP IMAGE FILTER...\n";
             int x, y, width, height;
