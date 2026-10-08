@@ -243,6 +243,44 @@ void applyCrop(Image& img, int x, int y, int width, int height) {
     }
     img = cropped;
 }
+void applyBlurFilter(Image& image)
+{
+    int width = image.width;
+    int height = image.height;
+    Image blurredImage(width, height);
+    int boxSize = 15;
+    for (int y = 0; y < height; ++y)
+    {
+        for (int x = 0; x < width; ++x)
+        {
+            int sumR = 0, sumG = 0, sumB = 0;
+            int count = 0;
+
+            for (int dy = -boxSize / 2; dy <= boxSize / 2; ++dy)
+            {
+                for (int dx = -boxSize / 2; dx <= boxSize / 2; ++dx)
+                {
+                    int newY = y + dy;
+                    int newX = x + dx;
+
+                    if (newY >= 0 && newY < height && newX >= 0 && newX < width)
+                    {
+                        sumR +=image(newX, newY, 0);
+                        sumG += image(newX, newY, 1);
+                        sumB += image(newX, newY, 2);
+                        count++;
+                    }
+                }
+            }
+
+            blurredImage(x, y, 0) = sumR / count;
+            blurredImage(x, y, 1) = sumG / count;   
+            blurredImage(x, y, 2) = sumB / count;
+
+        }
+    }
+    image = blurredImage;
+}
 void filter13_sunlight(Image img, Image& result) {
     result = Image(img.width, img.height);
 
@@ -376,7 +414,7 @@ int main() {
         }
         else if (number == 13) {
             cout << "-> APPLYING BLUR FILTER...\n";
-           
+           applyBlurFilter(img)
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 14) {
