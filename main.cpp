@@ -2,14 +2,14 @@
 Faculty of Computers and Artificial Intelligence, Cairo University (FCAI-CU)
 Course: CS213 - Object Oriented Programming
 Assignment 1 - Image Processing Application
-Section: S5,6
+Section: S21,22
 Team Members & Contributions:
 
 1. Rania Adel Kamal Ahmed - ID: 20250222 (Team Leader)
    - Tasks: Program Main Menu, Main Logic Structure, Filter 1 (Grayscale Conversion), Filter 5 (Flip Image),Filter 9 (Merge Images), Filter 13 (Sunlight Filter)
 
 2. Aesha Osama Abd-elHafeez Abd-elkareem - ID: 20251219
-   - Tasks: Filter 4 (Frame Image), Filter 8 (Resize Image)
+   - Tasks: Filter 4 (Frame Image), Filter 8 (Resize Image),Filter 12(Blur Image),Filter 16(Infrared Image)
 
 3. Marwa Sabry Makram Fahmy - ID: 20250808
    - Tasks: Program Main Menu, Main Logic Structure, Filter 3 (Invert Image Colors), Filter 7 (Darken and Lighten Image)
