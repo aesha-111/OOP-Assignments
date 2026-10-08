@@ -232,6 +232,20 @@ void mergeImages(Image img1, Image img2, Image& result) {
         }
     }
 }
+void detectEdges (Image&img){
+    for(int i=0;i<img.height-1;i++){
+        for(int j=0;j<img.width-1;j++){
+            if(img.getPixel(i,j,0)!=img.getPixel(i,j+1,0)){
+                img.setPixel(i,j,0,0);
+                img.setPixel(i,j,1,0);
+                img.setPixel(i,j,2,0);
+            }else{
+                img.setPixel(i,j,0,225);
+                img.setPixel(i,j,1,225);
+                img.setPixel(i,j,2,225);
+            }
+        }
+    }
 void applyCrop(Image& img, int x, int y, int width, int height) {
     Image cropped(width, height);
     for (int i = 0; i < width; ++i) {
@@ -399,7 +413,7 @@ int main() {
         }
         else if (number == 11) {
             cout << "-> APPLYING DETECT IMAGE EDGES FILTER...\n";
-           
+           detectEdges (img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
            else if (number == 12) {
