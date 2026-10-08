@@ -2,7 +2,7 @@
 Faculty of Computers and Artificial Intelligence, Cairo University (FCAI-CU)
 Course: CS213 - Object Oriented Programming
 Assignment 1 - Image Processing Application
-Section: S21,22
+Section: S5,6
 Team Members & Contributions:
 
 1. Rania Adel Kamal Ahmed - ID: 20250222 (Team Leader)
