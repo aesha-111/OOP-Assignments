@@ -12,7 +12,7 @@ Team Members & Contributions:
    - Tasks: Filter 4 (Frame Image), Filter 8 (Resize Image),Filter 12(Blur Image),Filter 16(Infrared Image)
 
 3. Marwa Sabry Makram Fahmy - ID: 20250808
-   - Tasks: Program Main Menu, Main Logic Structure, Filter 3 (Invert Image Colors), Filter 7 (Darken and Lighten Image)
+   - Tasks: Program Main Menu, Main Logic Structure, Filter 3 (Invert Image Colors), Filter 7 (Darken and Lighten Image),Filter 11 (Crop Images) ,Filter 12 (Purple filter)
 
 4. Habiba Ibrahim Metwaly Ibrahim - ID: 20250801
    - Tasks: Filter 2 (Black and White Filter), Filter 6 (Rotate Image), Filter 10 (Detect Image Edges), Filter 14 (TV Effect)
@@ -368,7 +368,7 @@ int main() {
         }
         else if (number == 4) {
             cout << "-> APPLYING INVERT COLORS FILTER...\n";
-         applyInvertImageColors(img);
+         applyInvertColors(img);
          cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";  
         }
         else if (number == 5) {
