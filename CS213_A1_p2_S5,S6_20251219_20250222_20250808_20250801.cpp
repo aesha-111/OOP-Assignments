@@ -342,10 +342,11 @@ void applyInfrared(Image& img) {
             int r = img(i, j, 0);
             int g = img(i, j, 1);
             int b = img(i, j, 2);
-            int infraredValue = (r + g + b) / 3;
-            img(i, j, 0) = infraredValue;
-            img(i, j, 1) = infraredValue;
-            img(i, j, 2) = infraredValue;
+
+           
+            img(i, j, 0) = 255 ; 
+            img(i, j, 1) = 255 - g; 
+            img(i, j, 2) = 255 - b; 
         }
     }
 }
