@@ -336,6 +336,19 @@ void applyPurpleTint(Image& img) {
         }
     }
 }
+void applyInfrared(Image& img) {
+    for (int i = 0; i < img.width; ++i) {
+        for (int j = 0; j < img.height; ++j) {
+            int r = img(i, j, 0);
+            int g = img(i, j, 1);
+            int b = img(i, j, 2);
+
+             img(i, j, 0) = 255;
+             img(i, j, 1) = 255-g;
+             img(i, j, 2) = 255 -b; 
+        }
+    }
+}
 int main() {
     Image img;
     int number = 0;
@@ -448,7 +461,7 @@ int main() {
         }
         else if (number == 17) {
             cout << "-> APPLY INFRARED PHOTOGRAPHY FILTER...\n";
-            
+            applyInfrared(img)
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }   
         else if (number == 18) {
