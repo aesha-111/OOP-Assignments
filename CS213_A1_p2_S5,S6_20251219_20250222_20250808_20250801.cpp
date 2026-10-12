@@ -1,3 +1,5 @@
+// Video link: https://drive.google.com/file/d/1QxPtVu_Bav6Ott7PhJQn6erNbeuCWNwb/view?usp=drive_link
+// Document link: https://drive.google.com/file/d/1-nvSmPVD_152MxxMsrZ_5P_moKBsQmPk/view?usp=drivesdk
 /*
 Faculty of Computers and Artificial Intelligence, Cairo University (FCAI-CU)
 Course: CS213 - Object Oriented Programming
