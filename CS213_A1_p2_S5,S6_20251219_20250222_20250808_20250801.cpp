@@ -443,7 +443,7 @@ int main() {
         }
         else if (number == 13) {
             cout << "-> APPLYING BLUR FILTER...\n";
-           applyBlurFilter(img)
+           applyBlurFilter(img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }
         else if (number == 14) {
@@ -463,7 +463,7 @@ int main() {
         }
         else if (number == 17) {
             cout << "-> APPLY INFRARED PHOTOGRAPHY FILTER...\n";
-            applyInfrared(img)
+            applyInfrared(img);
            cout<<"Next step : enter 18 to save the image or 19 to exit the program\n";
         }   
         else if (number == 18) {
