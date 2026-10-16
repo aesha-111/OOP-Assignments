@@ -315,8 +315,8 @@ void filter13_sunlight(Image img, Image& result) {
 void applyTVFX(Image&img){
     for(int i=0;i<img.width;++i){
         if(i%2==0){
-            for(int j=0;j<img.height;j++){
-                for(int k=0;k<3;k++){
+            for(int j=0;j<img.height;++j){
+                for(int k=0;k<3;++k){
                     img.setPixel(j,i,k,img.getPixel(j,i,k)*0.5);
                 }
             }
